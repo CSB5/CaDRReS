@@ -12,7 +12,9 @@ CaDDReS is based on Python 2.7
 - Scipy
 - Argparse
 
-**[Option]** conda env create -f CaDRReS-env.yml
+```sh
+pip install -r requirements.txt
+```
 
 ## Training a model
 
@@ -23,10 +25,10 @@ __Input files__
 - `drug_list.txt` is a text file contains drugs of interest 
 
 __Output files__
-- Drug response prediction of testing cell lines `{out_dir}/{f}D/seed{seed}/lr{l_rate}/CaDDReS_pred_end.csv`
-- Drug response prediction of training cell lines `{out_dir}/{f}D/seed{seed}/lr{l_rate}/CaDDReS_pred_end_train.csv`
-- A pickle file contains the model `{out_name}/{f}D/seed{seed}/lr{l_rate}/CaDDReS_model.pickle`
-- Cell line (P) and drug (Q) matrices `{out_name}/{f}D/seed{seed}/lr{l_rate}/CaDDReS_P.csv` and `{out_name}/{f}D/seed{seed}/lr{l_rate}/CaDDReS_Q.csv`
+- Drug response prediction of testing cell lines `{out_dir}/{f}D/seed{seed}/lr{l_rate}/CaDRReS_pred_end.csv`
+- Drug response prediction of training cell lines `{out_dir}/{f}D/seed{seed}/lr{l_rate}/CaDRReS_pred_end_train.csv`
+- A pickle file contains the model `{out_name}/{f}D/seed{seed}/lr{l_rate}/CaDRReS_model.pickle`
+- Cell line (P) and drug (Q) matrices `{out_name}/{f}D/seed{seed}/lr{l_rate}/CaDRReS_P.csv` and `{out_name}/{f}D/seed{seed}/lr{l_rate}/CaDDReS_Q.csv`
 
 __Parameters__
 
