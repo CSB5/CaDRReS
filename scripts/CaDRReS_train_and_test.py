@@ -208,22 +208,22 @@ def save_and_predict(ss_df, ss_test_df, cl_features_df, X, WP, WQ, mu, b_p, b_q,
         # convert sensitivity score to IC50
         train_pred_df *= -1
 
-        new_out_name_train = os.path.join(out_name, 'CaDDReS_pred_end_train.csv')
+        new_out_name_train = os.path.join(out_name, 'CaDRReS_pred_end_train.csv')
         train_pred_df.to_csv(new_out_name_train)
 
-        pd.DataFrame(P_mat_train, index=ss_df.index, columns=range(1, f+1)).to_csv(os.path.join(out_name, 'CaDDReS_P.csv'))
-        pd.DataFrame(Q_mat_train, index=ss_df.columns, columns=range(1, f+1)).to_csv(os.path.join(out_name, 'CaDDReS_Q.csv'))
+        pd.DataFrame(P_mat_train, index=ss_df.index, columns=range(1, f+1)).to_csv(os.path.join(out_name, 'CaDRReS_P.csv'))
+        pd.DataFrame(Q_mat_train, index=ss_df.columns, columns=range(1, f+1)).to_csv(os.path.join(out_name, 'CaDRReS_Q.csv'))
 
     ##############
     # Prediction #
     ##############
 
     if suffix == 'end':
-        new_out_fname = os.path.join(out_name, 'CaDDReS_pred_end.csv')
-        new_out_dict_fname = os.path.join(out_name, 'CaDDReS_model.pickle')
+        new_out_fname = os.path.join(out_name, 'CaDRReS_pred_end.csv')
+        new_out_dict_fname = os.path.join(out_name, 'CaDRReS_model.pickle')
     else:
-        new_out_fname = os.path.join(out_name, 'CaDDReS_pred_{:d}_ckpt.csv'.format(epoch))
-        new_out_dict_fname = os.path.join(out_name, 'CaDDReS_pred_{:d}_ckpt.pickle'.format(epoch)) 
+        new_out_fname = os.path.join(out_name, 'CaDRReS_pred_{:d}_ckpt.csv'.format(epoch))
+        new_out_dict_fname = os.path.join(out_name, 'CaDRReS_pred_{:d}_ckpt.pickle'.format(epoch)) 
 
 
     P_test = list(ss_test_df.index)

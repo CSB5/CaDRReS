@@ -21,7 +21,7 @@ parser.add_argument("ss_test_name")
 parser.add_argument("cl_feature_fname")
 parser.add_argument("out_dir")
 
-# args = parser.parse_args(['../output/10D/seed0/lr0-01/CaDDReS_model.pickle', '../input/ccle_all_abs_ic50_bayesian_sigmoid.csv', '../input/ccle_cellline_pcor_ess_genes.csv', '../output'])
+# args = parser.parse_args(['../output/10D/seed0/lr0-01/CaDRReS_model.pickle', '../input/ccle_all_abs_ic50_bayesian_sigmoid.csv', '../input/ccle_cellline_pcor_ess_genes.csv', '../output'])
 args = parser.parse_args()
 
 ##### Read the model #####
@@ -52,8 +52,8 @@ ss_test_df = ss_test_df[ss_test_df.index.isin(cl_list)]
 # Prediction #
 ##############
 
-new_out_fname = os.path.join(out_dir, 'CaDDReS_pred.csv')
-new_out_dict_fname = os.path.join(out_dir, 'CaDDReS_pred.pickle')
+new_out_fname = os.path.join(out_dir, 'CaDRReS_pred.csv')
+new_out_dict_fname = os.path.join(out_dir, 'CaDRReS_pred.pickle')
 
 P_test = list(ss_test_df.index)
 n_test = len(P_test)
