@@ -49,7 +49,7 @@ python CaDRReS_train_and_test.py drug_response_ic50_train.csv drug_response_ic50
 Note that CaDRReS also saves checkpoints (parameters and predictions) of the model for every 1000 iterations.
 An example command to train a model for CCLE dataset:
 ```sh
-$ cd script
+$ cd scripts
 $ python CaDRReS_train_and_test.py ../input/ccle_all_abs_ic50_bayesian_sigmoid.csv ../input/ccle_all_abs_ic50_bayesian_sigmoid.csv ../input/ccle_cellline_pcor_ess_genes.csv ../misc/ccle_drugMedianGE0.txt ../output 10 100 0.01 0
 ```
 
@@ -73,7 +73,7 @@ python CaDRReS_test.py CaDRReS_model.pickle ../input/ccle_all_abs_ic50_bayesian_
 
 An example command for predicting drug responses based on the provided model:
 ```sh
-$ cd script
+$ cd scripts
 $ python CaDRReS_test.py ../output/10D/seed0/lr0-01/CaDRReS_model.pickle ../input/ccle_all_abs_ic50_bayesian_sigmoid.csv ../input/ccle_cellline_pcor_ess_genes.csv ../output
 ```
 
