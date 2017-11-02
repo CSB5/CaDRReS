@@ -1,7 +1,7 @@
 # CaDRReS
 ---
 
-**Ca**ncer **D**rug **R**esponse prediction using a **Re**commender **S**ystem (CaDRReS) is based on the matrix factorization approach to predict which drugs are sensitive for an unseen cell line. CaDRReS can also be used for studying drug response mechanisms including classes of drugs, subtypes of cell lines based on drug response profile, and drug-pathway associations.
+**Ca**ncer **D**rug **R**esponse prediction using a **Re**commender **S**ystem (**CaDRReS**) is based on the matrix factorization approach to predict which drugs are sensitive for an unseen cell line. CaDRReS can also be used for studying drug response mechanisms including classes of drugs, subtypes of cell lines based on drug response profile, and drug-pathway associations.
 
 ## How to run CaDRReS?
 
@@ -16,7 +16,35 @@ CaDDReS is based on Python 2.7
 pip install -r requirements.txt
 ```
 
-## Training a model
+##### NOTE
+
+Users have two options to run CaDRReS. The first option is to run `CaDRReS_test.py` for applying the pre-trained model based on GDSC dataset to predict drug response of input samples. The second option is to run `CaDRReS_train_and_test.py` for training and testing the model as well as optaining the pharmacogenomic space of input samples. We provide examples of both options below:
+
+## Predicting drug responses from an existing model
+
+Here we provides a model trained on GDSC dataset using 10 dimensions of the pharmacogenomic space.
+
+__Input files__
+- `CaDRReS_model.pickle` is a file containing existing model
+- `drug_response_ic50_test.csv` contains an empty matrix where rows are cell lines and columns are features
+- `cell_line_features.csv` contains a feature matrix where rows are testing cell lines and columns are features. The features have to match with the features used for training the model.
+
+__Output file__
+- Drug response prediction of testing cell lines `{out_dir}/CaDRReS_pred.csv`
+- Matrices P and Q and biases terms `{out_dir}/CaDRReS_pred.pickle`
+
+__Command__
+```sh
+python CaDRReS_test.py CaDRReS_model.pickle ../input/ccle_all_abs_ic50_bayesian_sigmoid.csv ../input/ccle_cellline_pcor_ess_genes.csv {out_dir}
+```
+
+An example command for predicting drug responses based on the provided model:
+```sh
+$ cd scripts
+$ python CaDRReS_test.py ../output/10D/seed0/lr0-01/CaDRReS_model.pickle ../input/ccle_all_abs_ic50_bayesian_sigmoid.csv ../input/ccle_cellline_pcor_ess_genes.csv ../output
+```
+
+## Training and testing a model
 
 __Input files__
 - `drug_response_ic50_train.csv` contains a matrix of IC50s where rows are cell lines and columns are features
@@ -51,30 +79,6 @@ An example command to train a model for CCLE dataset:
 ```sh
 $ cd scripts
 $ python CaDRReS_train_and_test.py ../input/ccle_all_abs_ic50_bayesian_sigmoid.csv ../input/ccle_all_abs_ic50_bayesian_sigmoid.csv ../input/ccle_cellline_pcor_ess_genes.csv ../misc/ccle_drugMedianGE0.txt ../output 10 100 0.01 0
-```
-
-## Predicting drug responses
-
-Here we provides a model trained on GDSC dataset using 10 dimensions.
-
-__Input files__
-- `CaDRReS_model.pickle` is a file containing existing model
-- `drug_response_ic50_test.csv` contains an empty matrix where rows are cell lines and columns are features
-- `cell_line_features.csv` contains a feature matrix where rows are testing cell lines and columns are features. The features have to match with the features used for training the model.
-
-__Output file__
-- Drug response prediction of testing cell lines `{out_dir}/CaDRReS_pred.csv`
-- Matrices P and Q and biases terms `{out_dir}/CaDRReS_pred.pickle`
-
-__Command__
-```sh
-python CaDRReS_test.py CaDRReS_model.pickle ../input/ccle_all_abs_ic50_bayesian_sigmoid.csv ../input/ccle_cellline_pcor_ess_genes.csv {out_dir}
-```
-
-An example command for predicting drug responses based on the provided model:
-```sh
-$ cd scripts
-$ python CaDRReS_test.py ../output/10D/seed0/lr0-01/CaDRReS_model.pickle ../input/ccle_all_abs_ic50_bayesian_sigmoid.csv ../input/ccle_cellline_pcor_ess_genes.csv ../output
 ```
 
 
