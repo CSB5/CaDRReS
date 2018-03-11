@@ -47,8 +47,8 @@ $ python CaDRReS_test.py ../output/10D/seed0/lr0-01/CaDRReS_model.pickle ../inpu
 ## Training and testing a model
 
 __Input files__
-- `drug_response_ic50_train.csv` contains a matrix of IC50s where rows are cell lines and columns are features
-- `ug_response_ic50_test.csv` contains an empty matrix where rows are cell lines and columns are features
+- `drug_response_ic50_train.csv` contains a matrix of IC50s where rows are cell lines and columns are drugs
+- `drug_response_ic50_test.csv` contains an empty matrix where rows are cell lines and columns are drugs
 - `cell_line_features.csv` contains a feature matrix where rows are both testing and training cell lines and columns are features
 - `drug_list.txt` is a text file contains drugs of interest 
 
