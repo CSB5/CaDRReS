@@ -8,3 +8,8 @@ Here we provide scripts for Bayesian sigmoid curve fitting of dose-response valu
 CaDDReS is based on Python 2.7
 - pyjags
 - pymc
+
+__Example command__
+```sh
+python bayesian_sigmoid_curve_fitting_CCLE.py CCLE_dose_response_scores.tsv {out_dir}
+```
