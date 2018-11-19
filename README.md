@@ -3,6 +3,8 @@
 
 **Ca**ncer **D**rug **R**esponse prediction using a **Re**commender **S**ystem (**CaDRReS**) is based on the matrix factorization approach to predict which drugs are sensitive for an unseen cell line. CaDRReS can also be used for studying drug response mechanisms including classes of drugs, subtypes of cell lines based on drug response profile, and drug-pathway associations.
 
+Chayaporn Suphavilai, Denis Bertrand, Niranjan Nagarajan; Predicting Cancer Drug Response using a Recommender System, Bioinformatics, Volume 34, Issue 22, 15 November 2018, Pages 3907–3914, https://doi.org/10.1093/bioinformatics/bty452
+
 ## How to run CaDRReS?
 
 CaDDReS is based on Python 2.7
