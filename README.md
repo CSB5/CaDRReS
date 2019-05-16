@@ -89,5 +89,5 @@ For calculating dose-response curves of CCLE and GDSC, please visit [this page.]
 
 ## Contact
 
-Please direct any questions or feedback to Chayaporn Suphavilai (suphavilaic99@gis.a-star.edu.sg) and Niranjan Nagarajan (nagarajann@gis.a-star.edu.sg).
+Please direct any questions or feedback to Chayaporn Suphavilai (suphavilaic@gis.a-star.edu.sg) and Niranjan Nagarajan (nagarajann@gis.a-star.edu.sg).
 
