@@ -4,6 +4,9 @@ Here we provide scripts for Bayesian sigmoid curve fitting of dose-response valu
 
 *Chayaporn Suphavilai, Denis Bertrand, Niranjan Nagarajan; Predicting Cancer Drug Response using a Recommender System, Bioinformatics, Volume 34, Issue 22, 15 November 2018, Pages 3907–3914, https://doi.org/10.1093/bioinformatics/bty452*
 
+GDSC_dose_response_scores.tsv [Download](https://www.dropbox.com/s/oufmlqkwt0wtvlp/GDSC_dose_response_scores.tsv?dl=0)
+CCLE_dose_response_scores.tsv [Download](https://www.dropbox.com/s/glk6sttf1b1wx66/CCLE_dose_response_scores.tsv?dl=0)
+
 ### Additional Required Libraries
 CaDDReS is based on Python 2.7
 - pyjags
