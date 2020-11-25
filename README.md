@@ -4,7 +4,7 @@
 
 *Chayaporn Suphavilai, Denis Bertrand, Niranjan Nagarajan; Predicting Cancer Drug Response using a Recommender System, Bioinformatics, Volume 34, Issue 22, 15 November 2018, Pages 3907–3914, https://doi.org/10.1093/bioinformatics/bty452*
 
-> We are working on a new version of CaDRReS, which will support single-cell RNA-seq data. You can find a new implementation of CaDRReS model based on TensorFlow, as well as Jupyter notebooks for model training and testing on your new samples at (https://github.com/CSB5/CaDRReS-SC). 
+> A newer TensorFlow implementation of CaDRReS, with additional features to support single-cell RNA-seq data, as well as Jupyter notebooks for model training and testing, can be found here: https://github.com/CSB5/CaDRReS-SC. 
 
 ## How to run CaDRReS?
 
@@ -21,20 +21,20 @@ pip install -r requirements.txt
 
 ##### NOTE
 
-Users have two options to run CaDRReS. The first option is to run `CaDRReS_test.py` for applying the pre-trained model based on GDSC dataset to predict drug response of input samples. The second option is to run `CaDRReS_train_and_test.py` for training and testing the model as well as optaining the pharmacogenomic space of input samples. We provide examples of both options below:
+Users have two options to run CaDRReS. The first option is to run `CaDRReS_test.py` for applying the pre-trained model based on the GDSC dataset to predict drug response of input samples. The second option is to run `CaDRReS_train_and_test.py` for training and testing the model as well as obtaining the pharmacogenomic space for input samples. We provide examples for both options below:
 
 ## Predicting drug responses from an existing model
 
-Here we provides a model trained on GDSC dataset using 10 dimensions of the pharmacogenomic space.
+Here we provides a model trained on the GDSC dataset using 10 dimensions for the pharmacogenomic space.
 
 __Input files__
-- `CaDRReS_model.pickle` is a file containing existing model
+- `CaDRReS_model.pickle` is a file containing an existing model
 - `drug_response_ic50_test.csv` contains an empty matrix where rows are cell lines and columns are features
-- `cell_line_features.csv` contains a feature matrix where rows are testing cell lines and columns are features. The features have to match with the features used for training the model.
+- `cell_line_features.csv` contains a feature matrix where rows are the cell lines to be analyzed and columns are features. The features have to match with the features used for training the model.
 
 __Output file__
-- Drug response prediction of testing cell lines `{out_dir}/CaDRReS_pred.csv`
-- Matrices P and Q and biases terms `{out_dir}/CaDRReS_pred.pickle`
+- Drug response prediction for input cell lines `{out_dir}/CaDRReS_pred.csv`
+- Matrices P and Q and bias terms `{out_dir}/CaDRReS_pred.pickle`
 
 __Command__
 ```sh
@@ -76,9 +76,8 @@ __Command__
 ```sh
 python CaDRReS_train_and_test.py drug_response_ic50_train.csv drug_response_ic50_test.csv  cell_line_features.csv drug_list.txt {out_dir} {f} {max_iterations} {l_rate} {seed}
 ```
-
 Note that CaDRReS also saves checkpoints (parameters and predictions) of the model for every 1000 iterations.
-An example command to train a model for CCLE dataset:
+An example command to train a model for the CCLE dataset:
 ```sh
 $ cd scripts
 $ python CaDRReS_train_and_test.py ../input/ccle_all_abs_ic50_bayesian_sigmoid.csv ../input/ccle_all_abs_ic50_bayesian_sigmoid.csv ../input/ccle_cellline_pcor_ess_genes.csv ../misc/ccle_drugMedianGE0.txt ../output 10 50000 0.01 0
@@ -86,7 +85,7 @@ $ python CaDRReS_train_and_test.py ../input/ccle_all_abs_ic50_bayesian_sigmoid.c
 
 ## Bayesian Sigmoid Curve Fitting
 
-For calculating dose-response curves of CCLE and GDSC, please visit [this page.](https://github.com/CSB5/CaDRReS/tree/master/scripts/bayesian_sigmoid_curve_fitting)
+For calculating dose-response curves for CCLE and GDSC, please visit [this page.](https://github.com/CSB5/CaDRReS/tree/master/scripts/bayesian_sigmoid_curve_fitting)
 
 ## Contact
 
