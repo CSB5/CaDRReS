@@ -1,4 +1,4 @@
 pandas==0.19.2
 numpy==1.21.0
-scipy==0.19.0
+scipy==1.10.0
 argparse==1.1
